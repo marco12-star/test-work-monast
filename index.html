@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,13 @@
 					<a href="#" class="brand">
 						<img src="img/logo.svg" alt="Монастырёв">
 					</a>
-					<div class="city" data-modal="2">
+					<div class="city js-open-modal" data-modal="1">
 						<a href="#">
 							<span>Владивосток</span>
 							<i class="arrow"></i>
 						</a>
 					</div>
-					<div class="city-detect modal" data-modal="2">
+					<div class="city-detect modal" data-modal="1">
 						<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 							<path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
 						</svg>
@@ -54,13 +54,25 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="menu__toggle">
+					<div class="menu__toggle js-open-modal" data-modal="2">
 						<a href="#">
 							<svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7727 11.1628H16.7159V14.8837H12.7727V11.1628ZM6.85805 11.1628H10.8012V14.8837H6.85805V11.1628ZM0.943359 11.1628H4.88649V14.8837H0.943359V11.1628ZM12.7727 5.5814H16.7159V9.30233H12.7727V5.5814ZM6.85805 5.5814H10.8012V9.30233H6.85805V5.5814ZM0.943359 5.5814H4.88649V9.30233H0.943359V5.5814ZM12.7727 0H16.7159V3.72093H12.7727V0ZM6.85805 0H10.8012V3.72093H6.85805V0ZM0.943359 0H4.88649V3.72093H0.943359V0Z"/>
 							</svg>
 							Каталог товаров
 						</a>
+					</div>
+					<div class="catalog modal" data-modal="2">
+						<div class="catalog__category">
+							<button class="button cats__button" data-target="content1">категории</button>
+							<button class="button brands__button" data-target="content2">бренды</button>
+						</div>
+						<div class="category block-content" id="content1">
+							<h3>cats</h3>
+						</div>
+						<div class="brands block-content" id="content2">
+							<h3>brands</h3>
+						</div>
 					</div>
 					<div class="search-bar">
 						<input type="text" placeholder="Средство,  действующее вещество, проблема">
@@ -105,12 +117,23 @@
 			  }
 		    });
 		});
-		!function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
-
+		/*catalog*/
+			var clicked = ''
+	        document.addEventListener('click', e => {
+	            const targetId = e.target.getAttribute('data-target') || '' // достаем id элемента
+	            if(!targetId) return // если его нет, выходим из скрипта
+	            const target = document.getElementById(targetId) // ссылка на сам элемент
+	            if(clicked && clicked !== target) clicked.classList.remove('open') 
+	            //если это не первое открытие и не 2ой раз открывается текущий, то скрываем
+	            target.classList.add('open')
+	            clicked = target //сохраняем ссылку в замыкании
+	        })
+			!function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
+		/*catalog*/
 
 		document.addEventListener('DOMContentLoaded', function() {
 
-		   var modalButtons = document.querySelectorAll('.city'),
+		   var modalButtons = document.querySelectorAll('.js-open-modal'),
 		       overlay      = document.querySelector('.js-overlay-modal'),
 		       closeButtons = document.querySelectorAll('.js-modal-close');
 
