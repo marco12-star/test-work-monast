@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Монастырёв Тестова Работа</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+	<!-- header -->
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<a href="#" class="brand">
+						<img src="img/logo.svg" alt="Монастырёв">
+					</a>
+					<div class="city" data-modal="2">
+						<a href="#">
+							<span>Владивосток</span>
+							<i class="arrow"></i>
+						</a>
+					</div>
+					<div class="city-detect modal" data-modal="2">
+						<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+						</svg>
+					    <p>Информация о доставке будет отображаться для региона:</p>
+						<span>Владивосток</span>
+						<button class="btn">Да, выбрать</button>
+						<a href="#">Нет, выбрать другой город</a>
+					</div>
+					<div class="overlay js-overlay-modal"></div>
+					<nav>
+						<ul>
+							<li><a href="#" class="current">Адреса аптек</a></li>
+							<li><a href="#">Доставка</a></li>
+							<li><a href="#">О нас</a></li>
+							<li><a href="#">Акции</a></li>
+						</ul>
+					</nav>
+					<div class="blind-mode">
+						<a>
+							<span class="mode-text">Версия для слабовидящих</span>
+							<svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.745727 5.2054C0.425228 5.63523 0.205241 5.97397 0.0880302 6.17701C-0.0293434 6.38034 -0.0293434 6.61966 0.0880302 6.82299C0.205241 7.02603 0.425228 7.36477 0.745727 7.7946C1.27618 8.50601 1.90208 9.21699 2.62279 9.88285C4.72059 11.821 7.18781 13 10.006 13C12.8242 13 15.2914 11.821 17.3892 9.88285C18.1099 9.21699 18.7358 8.50601 19.2663 7.7946C19.5868 7.36477 19.8068 7.02603 19.924 6.82299C20.0414 6.61966 20.0414 6.38034 19.924 6.17701C19.8068 5.97397 19.5868 5.63523 19.2663 5.2054C18.7358 4.49399 18.1099 3.78301 17.3892 3.11715C15.2914 1.17902 12.8242 0 10.006 0C7.18781 0 4.72059 1.17902 2.62279 3.11715C1.90208 3.78301 1.27618 4.49399 0.745727 5.2054ZM3.83954 8.89491C3.19224 8.29688 2.62602 7.65369 2.14675 7.01094C2.01072 6.8285 1.89008 6.65716 1.78512 6.49998C1.89008 6.34281 2.01072 6.17146 2.14675 5.98903C2.62602 5.34627 3.19224 4.70308 3.83954 4.10505C5.65034 2.43207 7.71709 1.44443 10.0061 1.44443C12.2952 1.44443 14.3619 2.43207 16.1727 4.10505C16.82 4.70308 17.3862 5.34627 17.8655 5.98903C18.0015 6.17146 18.1222 6.34281 18.2271 6.49998C18.1222 6.65716 18.0015 6.8285 17.8655 7.01094C17.3862 7.65369 16.82 8.29688 16.1727 8.89491C14.3619 10.5679 12.2952 11.5555 10.0061 11.5555C7.71709 11.5555 5.65034 10.5679 3.83954 8.89491Z"/>
+								<path d="M10.0053 9.38886C8.1632 9.38886 6.66992 8.09546 6.66992 6.49997C6.66992 4.90448 8.1632 3.61108 10.0053 3.61108C11.8473 3.61108 13.3406 4.90448 13.3406 6.49997C13.3406 8.09546 11.8473 9.38886 10.0053 9.38886Z"/>
+							</svg>
+						</a>
+					</div>
+					<div class="phone-call">
+						<a href="#">8 800 707 77 33</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="menu__toggle">
+						<a href="#">
+							<svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7727 11.1628H16.7159V14.8837H12.7727V11.1628ZM6.85805 11.1628H10.8012V14.8837H6.85805V11.1628ZM0.943359 11.1628H4.88649V14.8837H0.943359V11.1628ZM12.7727 5.5814H16.7159V9.30233H12.7727V5.5814ZM6.85805 5.5814H10.8012V9.30233H6.85805V5.5814ZM0.943359 5.5814H4.88649V9.30233H0.943359V5.5814ZM12.7727 0H16.7159V3.72093H12.7727V0ZM6.85805 0H10.8012V3.72093H6.85805V0ZM0.943359 0H4.88649V3.72093H0.943359V0Z"/>
+							</svg>
+							Каталог товаров
+						</a>
+					</div>
+					<div class="search-bar">
+						<input type="text" placeholder="Средство,  действующее вещество, проблема">
+						<a href="#">
+							<img src="img/icons/search.svg" alt="Поиск">
+						</a>
+					</div>
+					<div class="user">
+						<img src="img/icons/user.svg" alt="Пользователь">
+						<div class="user__info">
+							<a href="#" class="user__name">Константин</a>
+							<a href="#" class="user__profile">Ваш профиль</a>
+						</div>
+					</div>
+					<div class="star">
+						<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.29825 7.24544L11.5265 0.636328C11.9409 -0.212109 13.1381 -0.212109 13.5526 0.636328L16.7808 7.24544L24.0002 8.31179C24.9264 8.44861 25.2956 9.59921 24.625 10.2593L19.4021 15.4001L20.6347 22.6628C20.793 23.5955 19.8242 24.3067 18.9954 23.8663L12.5395 20.4353L6.08366 23.8663C5.25486 24.3067 4.28607 23.5955 4.44436 22.6628L5.67699 15.4001L0.454036 10.2593C-0.216561 9.59921 0.152614 8.44861 1.07889 8.31179L8.29825 7.24544Z" fill="#FFCC00"/>
+						</svg>
+					</div>
+					<div class="basket">
+						<a href="#">
+							<img src="img/icons/basket.svg" alt="Корзина">
+							<span>13</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+	<!-- header -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+		    $(".blind-mode").click(function(){
+		        $(this).toggleClass("open");
+		        if (!$(this).data('status')) {
+			  	$('.mode-text').html('Вернуться к обычной версии');
+			    $(this).data('status', true);
+			  }
+			  else {
+			  	$('.mode-text').html('Версия для слабовидящих');
+			    $(this).data('status', false);
+			  }
+		    });
+		});
+		!function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
+
+
+		document.addEventListener('DOMContentLoaded', function() {
+
+		   var modalButtons = document.querySelectorAll('.city'),
+		       overlay      = document.querySelector('.js-overlay-modal'),
+		       closeButtons = document.querySelectorAll('.js-modal-close');
+
+		   modalButtons.forEach(function(item){
+		      item.addEventListener('click', function(e) {
+		         e.preventDefault();
+		         var modalId = this.getAttribute('data-modal'),
+		             modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+		         modalElem.classList.add('active');
+		         overlay.classList.add('active');
+		      });
+
+		   });
+
+		   closeButtons.forEach(function(item){
+
+		      item.addEventListener('click', function(e) {
+		         var parentModal = this.closest('.modal');
+
+		         parentModal.classList.remove('active');
+		         overlay.classList.remove('active');
+		      });
+
+		   });
+
+		    document.body.addEventListener('keyup', function (e) {
+		        var key = e.keyCode;
+
+		        if (key == 27) {
+
+		            document.querySelector('.modal.active').classList.remove('active');
+		            document.querySelector('.overlay').classList.remove('active');
+		        };
+		    }, false);
+
+		    overlay.addEventListener('click', function() {
+		        document.querySelector('.modal.active').classList.remove('active');
+		        this.classList.remove('active');
+		    });
+
+		});
+	</script>
+</body>
+</html>
