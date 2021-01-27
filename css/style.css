@@ -175,7 +175,7 @@ a {
 	margin-right: 80px;
 }
 
-.header nav ul li a{
+.menu__link{
 	margin-right: 16px;
 	font-size: 16px;
 	line-height: 21px;
@@ -184,7 +184,7 @@ a {
     white-space: nowrap;
 }
 
-.header nav ul li a.current{
+.menu__link.current{
 	font-weight: bold;
 }
 
@@ -314,7 +314,7 @@ nav ul li a:hover::after,
 .catalog {
 	display:none;
 	position: absolute;
-    top: 55px;
+    top: 48px;
     background-color: #fff;
     text-align: center;
     z-index: 30;
@@ -464,13 +464,7 @@ nav ul li a:hover::after,
 	 display: flex;
 	 justify-content: space-between;
 	 align-items: center;
-	 height: 80px;
 	 border-radius: 2px 2px 0px 0px;
-}
- @media screen and (max-width: 512px) {
-	 .tabs {
-		 height: 40px;
-	}
 }
  .tablinks {
 	 background: transparent;
@@ -478,7 +472,7 @@ nav ul li a:hover::after,
 	 border: none;
 	 cursor: pointer;
 	 width: 50%;
-	 height: 80px;
+	 height: 50px;
 	 position: relative;
 	 display: flex;
 	 justify-content: center;
@@ -506,6 +500,10 @@ nav ul li a:hover::after,
 	 bottom: 0px;
 	 overflow: hidden;
 	 opacity: 1;
+	 border-radius: 0px 10px 10px 10px;
+}
+ .tablinks.active:nth-child(2) {
+	 border-radius: 10px 0px 0px 10px;
 }
  @media screen and (max-width: 512px) {
 	 .tablinks.active {
@@ -551,8 +549,8 @@ nav ul li a:hover::after,
 	 z-index: 3;
 	 position: relative;
 	 opacity: 1;
-	 padding: 20px 24px;
-	 overflow: hidden;
+	 padding: 0 24px;
+	 padding-right: 0;
 	 transition: all 1s ease;
 	 top: 0;
 	  border-radius: 10px 0px 0px 10px;
@@ -561,11 +559,14 @@ nav ul li a:hover::after,
 	 display: none;
 	 min-height: 180px;
 }
-.tabcontent ul li a {
+.catalog__link {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px auto;
+    padding-right: 20px;
+    position: relative;
+    white-space: inherit;
 }
 .link__head {
     width: 75%;
@@ -578,6 +579,22 @@ nav ul li a:hover::after,
     text-align: start;
     max-width: 195px;
 }
+/*submenu*/
+.submenu {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 0;
+	height: 20px;
+	background: #000;
+	visibility: hidden;
+	transition: width .15s linear;
+}
+a.catalog__link:hover ~ .submenu {
+	width: 50%;
+	visibility: visible;
+}
+/*submenu*/
  @keyframes tabEffect {
 	 from {
 		 top: -40px;
@@ -640,6 +657,7 @@ nav ul li a:hover::after,
 	}
 }
  
+
 
 /*catalog*/
 .header .search-bar{
